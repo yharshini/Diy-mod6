@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="accounts_output" format="json">
+      <types:shape format="weave" example="examples/accounts.json"><![CDATA[%dw 2.0
+
+type accounts_output = Array<{|  salesId: String,   id: String,   firstName: String,   lastName: String,   address: String,   postal: String,   country: String,   miles: String,   creationDate: String,   "type": String|}> {"example": "[{\\\"salesId\\\":\\\"ABC-1234John Doe777772019-08-21T04:34:41.098Z\\\",\\\"id\\\":\\\"ABC-1234\\\",\\\"firstName\\\":\\\"John\\\",\\\"lastName\\\":\\\"Doe\\\",\\\"address\\\":\\\"123 Main St., Dallas TX\\\",\\\"postal\\\":\\\"77777\\\",\\\"country\\\":\\\"US\\\",\\\"miles\\\":\\\"999\\\",\\\"creationDate\\\":\\\"2019-08-21T04:34:41.098Z\\\",\\\"type\\\":\\\"Personal\\\"},{\\\"salesId\\\":\\\"XYZ-8989Jane Doe898972018-12-09T21:53:12.127Z\\\",\\\"id\\\":\\\"XYZ-8989\\\",\\\"firstName\\\":\\\"Jane\\\",\\\"lastName\\\":\\\"Doe\\\",\\\"address\\\":\\\"10 Downing St., San Francisco CA\\\",\\\"postal\\\":\\\"89897\\\",\\\"country\\\":\\\"US\\\",\\\"miles\\\":\\\"101\\\",\\\"creationDate\\\":\\\"2018-12-09T21:53:12.127Z\\\",\\\"type\\\":\\\"Business\\\"}]"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#735106f6-bfd1-47bd-a98a-2f0cedb65919">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="accounts_output"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

@@ -1,0 +1,10 @@
+{
+  "sampleData": {
+    "735106f6-bfd1-47bd-a98a-2f0cedb65919": {
+      "payload": "sample_data/list_json.json"
+    },
+    "4fc38fcd-f2fb-46d4-be67-65244188e859": {
+      "payload": "sample_data/unknown.dwl"
+    }
+  }
+}
